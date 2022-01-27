@@ -22,7 +22,7 @@ FROM gcr.io/distroless/base-debian10
 
 WORKDIR /
 COPY --from=build /sample /sample
-EXPOSE 8181
+EXPOSE 5080
 USER nonroot:nonroot
 
 ENTRYPOINT ["/sample"]

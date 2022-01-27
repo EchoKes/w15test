@@ -21,16 +21,16 @@ services:
   ms_sample:
     image: echokes/08-ms_sample_image
     container: "18-ms_sample"
-    build: 
+    build:
       context: ./microservice/sample
       dockerfile: sample.Dockerfile
     ports:
-      - 5081:5081
+      - 5080:5080
     networks:
       - sampleNetwork
 # volumes
 volumes:
-  sample_data
+  sample_data: null
 
 # networks
 networks:
