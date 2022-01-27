@@ -19,8 +19,8 @@ services:
   #     - sampleNetwork
   # sample microservice
   ms_sample:
-    image: echokes/08-ms_sample_image
-    container: "18-ms_sample"
+    image: echokes/08-ms_busstop_image
+    container_name: "18-ms_busstop"
     build:
       context: ./microservice/sample
       dockerfile: sample.Dockerfile
