@@ -1,31 +1,31 @@
 version: '3.3'
 
 services:
-  # sample database
-  db_sample:
-    image: 18-db_sample_image
-    container_name: "18-db_sample"
-    build:
-      context: ./database
-      dockerfile: db.Dockerfile
-    environment:
-      MYSQL_TCP_PORT: 8182
-      MYSQL_ROOT_PASSWORD: "password"
-    ports:
-      - 8182: 3306
-    volumes:
-      - sample_data:/var/lib/mysql
-    networks:
-      - sampleNetwork
+  # # sample database
+  # db_sample:
+  #   image: 18-db_sample_image
+  #   container_name: "18-db_sample"
+  #   build:
+  #     context: ./database
+  #     dockerfile: db.Dockerfile
+  #   environment:
+  #     MYSQL_TCP_PORT: 8182
+  #     MYSQL_ROOT_PASSWORD: "password"
+  #   ports:
+  #     - 8182: 3306
+  #   volumes:
+  #     - sample_data:/var/lib/mysql
+  #   networks:
+  #     - sampleNetwork
   # sample microservice
   ms_sample:
-    image: 18-ms_sample_image
+    image: echokes/08-ms_sample_image
     container: "18-ms_sample"
     build: 
       context: ./microservice/sample
       dockerfile: sample.Dockerfile
     ports:
-      - 8181:8181
+      - 5081:5081
     networks:
       - sampleNetwork
 # volumes
